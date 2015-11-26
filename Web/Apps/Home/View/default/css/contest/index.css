@@ -1,0 +1,12 @@
+#tab_contest_list{font-size: 15px;width: 1000px;text-align: center;table-layout : fixed ; border-collapse:collapse;}
+#tab_contest_list td{white-space:nowrap; overflow:hidden; } 
+#tab_contest_list tr{border-bottom: solid 1px;}
+#tab_contest_list .status{width: 10%;}
+#tab_contest_list .status .open{color: green;}
+#tab_contest_list .status .close{color: gray;}
+#tab_contest_list .status .lock{color:red;}
+#tab_contest_list .id{width: 10%;}
+#tab_contest_list .status{width: 10%;}
+#tab_contest_list .title{width: 40%;}
+#tab_contest_list .datestart{width: 20%;}
+#tab_contest_list .dateend{width: 20%;}

@@ -1,0 +1,19 @@
+.top{width: 100%;text-align: center;}
+#add_pro{width: 50%;margin-left: auto;margin-right: auto;margin-bottom: 20px;}
+
+#tab_problem{font-size: 15px;width: 1000px;text-align: center;table-layout : fixed ; border-collapse:collapse;}
+#tab_problem td{white-space:nowrap; overflow:hidden; } 
+#tab_status tr{border-bottom: solid 1px;}
+#tab_problem a {margin-right: 10px;}
+#tab_problem .warning{color: red;}
+
+#tab_problem .tab_pro_head{font-size: 15px;width: 900px;}
+#tab_problem .id{width: 10%;}
+#tab_problem .title{width: 20%}
+#tab_problem .time_lim{width: 10%}
+#tab_problem .mem_lim{width: 10%;}
+#tab_problem .status{width: 10%;}
+#tab_problem .status .open{color: green;}
+#tab_problem .status .close{color: red;}
+#tab_problem .date {width: 10%;}
+#tab_problem .action {width: 20%;}

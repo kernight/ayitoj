@@ -1,0 +1,85 @@
+<html lang="zh-cn">
+ <head> 
+  <meta charset="utf-8" /> 
+  <!-- 禁用IE兼容模式 --> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+  <!-- 响应式布局 --> 
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+  <!-- 使部分国产浏览器采用默认高速的方法访问 --> 
+  <meta name="renderer" content="webkit" /> 
+  <meta name="description" content="" /> 
+  <meta name="keywords" content="" /> 
+  <title>添加题目－{$Think.config.sitename}</title> 
+  <!-- 让IE低版本浏览器兼容html5元素，实现响应式布局 --> 
+  <!--[if lt IE 9]>
+          <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]--> 
+ </head> 
+ <body> 
+  <!--　页头　--> 
+  <include file="default/head"/> 
+  <link rel="stylesheet" href="{$Think.config.viewdefault}/css/problem/add.css" /> 
+  <!--　页头　--> 
+  <div class="main">
+  <form method="post" action="{:U('problem/form_add')}">
+    <div id="pro_detail">
+    <div class="id">
+      <span>编号：<input name="pro_id"/></span>
+      <p>(编号不填写可以自行生成)</p>
+    </div>
+    <div class="title">
+      <span>标题：<input name="title"/></span>
+    </div>
+    <div class="limit">
+       <div class="time_lim"><strong>Time</strong>：<input type="number" value="1000" name="time_lim"/>ms</div>
+      <div class="mem_lim"><strong>Memory</strong>：<input type="number" value="65535" name="mem_lim"/>kb</div>
+    </div>
+
+    <div class="status">
+      题目状态：
+      <select name="status">
+      <option value="open" >开启</option>
+      <option value="close" selected="selected">关闭</option>
+    </select>
+    </div>
+    <button id="btn_submit" type="submit">提交</button><button id="btn_reset" type="reset">重新填写</button>
+    <div class="descri">
+      <p class="des">描述</p>
+      <textarea name="desc">描述文字</textarea>
+    </div>
+    
+    <div class="input">
+      <p class="des">输入要求</p>
+      <textarea name="input">输入要求</textarea>
+    </div>
+    
+    <div class="output">
+      <p class="des">输出要求</p>
+      <textarea name="output">输出要求</textarea>
+    </div>
+   
+    <div class="input_data">
+      <p class="des">样例输入</p>
+      <textarea name="input_data">样例输入</textarea>
+    </div>
+    
+    <div class="output_data">
+      <p class="des">样例输出</p>
+      <textarea name="output_data">样例输出</textarea>
+    </div>
+    
+    <div class="hint">
+      <p class="des">提示</p>
+      <textarea name="hint">提示</textarea>
+    </div>
+  </div>
+  <button id="btn_submit" type="submit">提交</button><button id="btn_reset" type="reset">重新填写</button>
+  </form>
+  </div>
+  <!--　页脚　--> 
+  <include file="default/foot"/> 
+  <!--　页脚　-->  
+  <script src="{$Think.config.viewdefault}/js/index.js"></script>
+ </body>
+</html>

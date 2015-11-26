@@ -1,0 +1,33 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="{$Think.config.viewdefault}/css/ayitoj.css" /> 
+  <link rel="stylesheet" href="{$Think.config.viewdefault}/css/head.css" />
+ </head>
+ <!-- jQuery文件 --> 
+  <script src="{$Think.config.viewdefault}/js/jquery.js"></script> 
+  <!-- json解析插件 --> 
+  <script src="{$Think.config.viewdefault}/js/jquery.json.min.js"></script> 
+  <!--自定义js --> 
+  <script src="__ROOT__/Apps/Home/View/default/js/ayitoj.js"></script> 
+</html>
+<body>
+	<div id="head">
+		<div id="title">
+			<div  id="school_logo" >
+				<img src="{$Think.config.viewdefault}/image/school_logo.png">
+			</div>
+			<div id="text_title">
+				<span>安阳工学院ACM在线评测系统管理端</span>
+				<p><a id="back" href="/index.php">返回前端网站</a></p>
+			</div>
+		</div>
+		<div id="top_nav_panel">
+			<ul id = "top_nav">
+				<ol><a class="active" href="/index.php">首页</a></ol>
+				<ol><a href="{:U('Problem/index')}">题目管理</a></ol>
+				<ol><a href="{:U('Contest/index')}">竞赛管理</a></ol>
+			</ul>
+		</div>
+	</div>
+</body>
+<hr />

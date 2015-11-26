@@ -1,0 +1,19 @@
+.top{width: 100%;text-align: center;}
+#add_pro{width: 50%;margin-left: auto;margin-right: auto;margin-bottom: 20px;}
+
+#tab_contest{font-size: 15px;width: 1000px;text-align: center;table-layout : fixed ; border-collapse:collapse;}
+#tab_contest td{white-space:nowrap; overflow:hidden; } 
+#tab_status tr{border-bottom: solid 1px;}
+#tab_contest a {margin-right: 10px;}
+#tab_contest .warning{color: red;}
+
+#tab_contest .tab_pro_head{font-size: 15px;width: 900px;}
+#tab_contest .id{width: 10%;}
+#tab_contest .title{width: 20%}
+#tab_contest .date_start{width: 15%}
+#tab_contest .date_end{width: 15%;}
+#tab_contest .status{width: 10%;}
+#tab_contest .status .open{color: green;}
+#tab_contest .status .close{color: gray;}
+#tab_contest .status .lock{color: red;}
+#tab_contest .action {width: 20%;}

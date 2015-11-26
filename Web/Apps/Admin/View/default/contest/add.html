@@ -1,0 +1,64 @@
+<html lang="zh-cn">
+<head> 
+<meta charset="utf-8" /> 
+<!-- 禁用IE兼容模式 --> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+<!-- 响应式布局 --> 
+<meta name="viewport" content="width=device-width, initial-scale=1" /> 
+<!-- 使部分国产浏览器采用默认高速的方法访问 --> 
+<meta name="renderer" content="webkit" /> 
+<meta name="description" content="" /> 
+<meta name="keywords" content="" /> 
+<title>添加竞赛－{$Think.config.sitename}</title> 
+<!-- 让IE低版本浏览器兼容html5元素，实现响应式布局 --> 
+<!--[if lt IE 9]>
+    		<script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    		<script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+  	<![endif]--> 
+</head> 
+<body>
+  <!--　页头　--> 
+<include file="default/head"/> 
+<link rel="stylesheet" href="{$Think.config.viewdefault}/css/contest/add.css" /> 
+<!--　页头　--> 
+<div class="main">
+	<form method="post" action="{:U('contest/form_add')}">
+		<div id="body">
+			<div id="id">
+				<span>竞赛编号</span>：
+				<input name="contest_id" type="number" />
+				<p>(编号不填写可以自行生成)</p>
+			</div>
+			<div id="title"><span>竞赛标题</span>：<input name="title"/></div>
+			<div id="date_start">
+				<span>开始时间</span>：
+				<input name="date_start" type="date"/>
+			</div>
+			<div id="date_end">
+				<span>结束时间</span>：
+				<input name="date_end" type="date"/>
+			</div>
+			<div id="status">
+				<span>竞赛状态</span>：
+				<select name="status">
+					<option value="open" selected="selected">开启</option>
+					<option value="close">关闭</option>
+				</select>
+			</div>
+			<button id="pro_add" type="button">添加题目</button>
+			<button id="pro_del" type="button">删除题目</button>
+			<div id="pro_area">
+			</div>
+		</div>
+		<div id="btn_area">
+			<button type="submit">提交</button>
+			<button type="reset">重新填写</button>
+		</div>
+	</form>
+</div>
+<!--　页脚　--> 
+<include file="default/foot"/> 
+<!--　页脚　-->  
+<script src="{$Think.config.viewdefault}/js/contest/add.js"></script>
+</body>
+</html>

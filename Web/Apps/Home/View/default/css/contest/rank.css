@@ -1,0 +1,8 @@
+#tab_rank{font-size: 15px;width: 1000px;text-align: center;table-layout : fixed ; border-collapse:collapse;}
+#tab_rank td  { white-space:nowrap; overflow:hidden; } 
+#tab_rank tr{border: solid 1px;}
+#tab_rank th{border: solid 2px;}
+#tab_rank td{border: solid 1px;}
+#tab_rank .user{width: 15%;}
+#tab_rank .time{width: 10%;}
+#tab_rank .active{width: 100%;height: 100%;background-color: green;color: white;}

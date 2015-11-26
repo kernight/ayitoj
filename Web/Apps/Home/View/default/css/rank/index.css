@@ -1,0 +1,10 @@
+#tab_rank{font-size: 15px;width: 1000px;text-align: center;table-layout : fixed ; border-collapse:collapse;}
+#tab_rank tr{border: solid 1px;}
+#tab_rank th{border: solid 2px;}
+#tab_rank td{border: solid 1px #505050;}
+#tab_rank .rankid{width: 15%;}
+#tab_rank .nickname{width: 45%;}
+#tab_rank .numpro{width: 10%;}
+#tab_rank .numac{width: 10%;}
+#tab_rank .numtotal{width: 10%;}
+#tab_rank .ratio{width: 10%;}

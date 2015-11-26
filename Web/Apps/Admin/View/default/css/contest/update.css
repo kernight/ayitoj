@@ -1,0 +1,4 @@
+#body{width: 100%;text-align: center;}
+#body span{font-size: 20px;}
+#btn_area{width: 100%;text-align: center;margin-top: 50px;}
+#btn_area button {width: 20%;height: 50px;display: inline-block;font-size: 18px;}

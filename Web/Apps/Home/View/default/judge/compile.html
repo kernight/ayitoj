@@ -1,0 +1,42 @@
+<html lang="zh-cn">
+ <head> 
+  <meta charset="utf-8" /> 
+  <!-- 禁用IE兼容模式 --> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+  <!-- 响应式布局 --> 
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+  <!-- 使部分国产浏览器采用默认高速的方法访问 --> 
+  <meta name="renderer" content="webkit" /> 
+  <meta name="description" content="" /> 
+  <meta name="keywords" content="" /> 
+  <title>编译信息 - 编号：{$info_compile.run_id}－{$Think.config.sitename}</title> 
+  <!-- 让IE低版本浏览器兼容html5元素，实现响应式布局 --> 
+  <!--[if lt IE 9]>
+      		<script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      		<script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    	<![endif]--> 
+ </head> 
+ <body> 
+  <!--　页头　--> 
+  <include file="default/head"/> 
+  <link rel="stylesheet" href="{$Think.config.viewdefault}/css/judge/compile.css" /> 
+  <!--　页头　--> 
+ <div class="main">
+ <div id="info">
+   <span>运行编号：<span>{$info_compile.run_id}</span></span>
+   <br />
+   <span>作者：<span><a href="{:U('passport/ucenter')}?user_id ={$info_compile.user_id}">{$info_compile.nickname}</a></span></span>
+   <br />
+   <span>日期：<span>{$info_compile.date}</span></span>
+ </div>
+<div id="code">
+  <p><pre>{$info_compile.info}</pre></p>
+</div>
+<button id="btn_close" onclick="javascript:window.close()">关闭窗口</button>
+</div>
+  <!--　页脚　--> 
+  <include file="default/foot"/> 
+  <!--　页脚　-->  
+  <script src="{$Think.config.viewdefault}/js/index.js"></script>
+ </body>
+</html>

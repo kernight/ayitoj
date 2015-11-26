@@ -1,0 +1,19 @@
+#nickname{width: 100%;text-align: center;}
+#nickname span{font-size: 20px;color: #006633}
+
+#email{width: 100%;text-align: center;margin-top: 10px;}
+#email span{color: #006633}
+
+
+#email{width: 100%;text-align: center;margin-top: 10px;}
+#email span{color: #006633}
+
+#num_total{width: 100%;text-align: center;margin-top: 10px;}
+#num_total span{color: #006633}
+
+#num_ac{width: 100%;text-align: center;margin-top: 10px;}
+#num_ac span{color: #006633}
+
+#area_ac {width: 90%;margin-left: 5%;text-align: center;margin-top: 20px;}
+#area_ac #title{width: 100%;border-bottom: solid 1px #006633;font-size: 25px;}
+#area_ac #area_table ol{display: inline-block;width: 1%;}

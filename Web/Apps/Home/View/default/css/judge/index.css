@@ -1,0 +1,19 @@
+#search{font-size: 15px;display: inline-block;}
+#search input{width: 100px;}
+
+#tab_status{font-size: 15px;width: 1000px;text-align: center;table-layout : fixed ; border-collapse:collapse;}
+#tab_status td  { white-space:nowrap; overflow:hidden; } 
+#tab_status  .tab_status_head{font-size: 15px;width: 900px;}
+#tab_status tr{border: solid 1px;}
+#tab_status th{border: solid 2px;}
+#tab_status td{border: solid 1px #505050;}
+#tab_status  .id{font-size: 15px;width: 100px;}
+#tab_status  .pro{font-size: 15px;width: 80px;}
+#tab_status  .user{font-size: 15px;width: 120px;}
+#tab_status  .status{font-size: 15px;width: 250px;}
+#tab_status  .time{font-size: 15px;width: 60px;}
+#tab_status  .memory{font-size: 15px;width: 60px;}
+#tab_status  .codelen{font-size: 15px;width: 80px;}
+#tab_status  .date{font-size: 15px;width: 150px;}
+
+#reset {color: #000000;border: solid 1px;width: 50px;height: 20px;display: inline-block;text-align: center;}

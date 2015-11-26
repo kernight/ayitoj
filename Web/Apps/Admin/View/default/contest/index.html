@@ -1,0 +1,71 @@
+<html lang="zh-cn">
+<head> 
+<meta charset="utf-8" /> 
+<!-- 禁用IE兼容模式 --> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+<!-- 响应式布局 --> 
+<meta name="viewport" content="width=device-width, initial-scale=1" /> 
+<!-- 使部分国产浏览器采用默认高速的方法访问 --> 
+<meta name="renderer" content="webkit" /> 
+<meta name="description" content="" /> 
+<meta name="keywords" content="" /> 
+<title>竞赛列表－{$Think.config.sitename}</title> 
+<!-- 让IE低版本浏览器兼容html5元素，实现响应式布局 --> 
+<!--[if lt IE 9]>
+    		<script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    		<script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+  	<![endif]--> 
+</head> 
+<body>
+  <!--　页头　--> 
+<include file="default/head"/> 
+<link rel="stylesheet" href="{$Think.config.viewdefault}/css/contest/index.css" /> 
+<!--　页头　--> 
+<div class="main">
+<div class="top">
+	<a href="{:U('contest/add')}"><button id="add_pro">新建竞赛</button> </a>
+</div>
+<table id="tab_contest">
+	<tr>
+		<th class="id"></th>
+		<th class="id">竞赛ID</th>
+		<th class="title">竞赛标题</th>
+		<th class="date_start">开始时间</th>
+		<th class="date_end">结束时间</th>
+		<th class="status">状态</th>
+		<th class="action"></th>
+	</tr>
+	<volist name="info_contest" id="info">
+		<tr>
+			<td class="id">
+				<a id="{$info.contest_id}" href="{:U('contest/delcontest')}?contest_id={$info.contest_id}" class="warning">	删除
+				</a>
+			</td>
+			<td class="id">{$info.contest_id}</td>
+			<td class="title">{$info.title}</td>
+			<td class="date_start">{$info.date_start} </td>
+			<td class="date_end">{$info.date_end} </td>
+			<td class="status">
+				<?php if ("open" == $info["status"]): ?>
+					<span class="open">开启</span>
+				<?php elseif("close" == $info["status"]): ?>
+					<span class="close">结束</span>
+				<?php else: ?>
+					<span class="lock">锁定</span>
+				<?php endif ?>
+			</td>
+			<td class="action">
+				<a href="{:U('contest/update')}?contest_id={$info.contest_id}">修改信息</a>
+				<a href="{:U('contest/changestatus')}?contest_id={$info.contest_id}&status={$info.status}">更改状态</a>
+				
+			</td>
+		</tr>
+	</volist>
+</table>
+</div>
+<!--　页脚　--> 
+<include file="default/foot"/> 
+<!--　页脚　-->  
+<script src="{$Think.config.viewdefault}/js/contest/index.js"></script>
+</body>
+</html>

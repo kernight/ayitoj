@@ -1,0 +1,12 @@
+body{width: 1000px;margin-left: auto;margin-right: auto;}
+a{text-decoration: none;color: #3333FF;}
+a:visited {color: #3333FF}
+a:hover {color: #154683;}
+
+
+.main{min-height: 500px;}
+
+#page {text-align: center;}
+#page .btn_page{font-size: 20px;margin-left: 5px;width: 30px;height: 30px;border:solid 1px;display: inline-block;}
+#page .active {color:#FFFFFF;}
+#page .active {background-color:#000000;}

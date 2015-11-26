@@ -1,0 +1,9 @@
+#tab_pro_list{width: 60%;margin-left: auto;margin-right: auto;text-align: center;margin-top: 50px;text-align: center;table-layout : fixed ; border-collapse:collapse;}
+#tab_pro_list td{white-space:nowrap; overflow:hidden; } 
+#tab_pro_list tr{border-bottom: solid 1px;}
+#tab_pro_list .status{width: 10%;}
+#tab_pro_list .status .ac{color: green;}
+#tab_pro_list .status .wrong{color: red;}
+#tab_pro_list .id{width: 10%;}
+#tab_pro_list .title{width: 50%;}
+#tab_pro_list .ratio{width: 30%;}

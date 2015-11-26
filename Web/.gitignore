@@ -1,0 +1,14 @@
+#数据库快捷方式
+phpmyadmin
+
+#临时文件
+*.*~
+.~lock.*
+
+#日志文件
+*.log
+
+#临时文件
+Temp
+temp
+Runtime

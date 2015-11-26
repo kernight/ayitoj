@@ -1,0 +1,45 @@
+<html lang="zh-cn">
+ <head> 
+  <meta charset="utf-8" /> 
+  <!-- 禁用IE兼容模式 --> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+  <!-- 响应式布局 --> 
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+  <!-- 使部分国产浏览器采用默认高速的方法访问 --> 
+  <meta name="renderer" content="webkit" /> 
+  <meta name="description" content="" /> 
+  <meta name="keywords" content="" /> 
+  <title>用户中心- {$info_user.nickname}－{$Think.config.sitename}</title> 
+  <!-- 让IE低版本浏览器兼容html5元素，实现响应式布局 --> 
+  <!--[if lt IE 9]>
+      		<script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      		<script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    	<![endif]--> 
+ </head> 
+ <body> 
+  <!--　页头　--> 
+  <include file="default/head"/> 
+  <link rel="stylesheet" href="{$Think.config.viewdefault}/css/passport/ucenter.css" /> 
+  <!--　页头　--> 
+  <div class="main">
+  <div id="nickname"><span>{$info_user.nickname}</span>的个人空间</div>
+  <div id="email">邮箱：<span>{$info_user.email}</span></div>
+  <div id="num_total">总提交数：<span>{$info_judge.num_total}</span></div>
+  <div id="num_ac">总通过数：<span>{$info_judge.num_ac}</span></div>
+  <div id="area_ac">
+    <div id="title">所有通过的题目({$info_judge.num_pro})</div>
+    <div id="area_table">
+         <ul>
+           <volist name="info_ac" id="info">
+            <ol><a href="{:U('problem/detail')}?pro_id={$info.pro_id}">{$info.pro_id}</ol>
+           </volist>
+         </ul>
+    </div>
+  </div>
+  </div>
+  <!--　页脚　--> 
+  <include file="default/foot"/> 
+  <!--　页脚　-->  
+  <script src="{$Think.config.viewdefault}/js/index.js"></script>
+ </body>
+</html>

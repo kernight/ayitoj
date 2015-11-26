@@ -1,0 +1,85 @@
+<html lang="zh-cn">
+ <head> 
+  <meta charset="utf-8" /> 
+  <!-- 禁用IE兼容模式 --> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+  <!-- 响应式布局 --> 
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+  <!-- 使部分国产浏览器采用默认高速的方法访问 --> 
+  <meta name="renderer" content="webkit" /> 
+  <meta name="description" content="" /> 
+  <meta name="keywords" content="" /> 
+  <title>更新题目－题目{$info_pro.pro_id} - {$Think.config.sitename}</title> 
+  <!-- 让IE低版本浏览器兼容html5元素，实现响应式布局 --> 
+  <!--[if lt IE 9]>
+          <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]--> 
+ </head> 
+ <body> 
+  <!--　页头　--> 
+  <include file="default/head"/> 
+  <link rel="stylesheet" href="{$Think.config.viewdefault}/css/problem/update.css" /> 
+  <!--　页头　--> 
+  <div class="main">
+  <form method="post" action="{:U('problem/form_update')}">
+    <div id="pro_detail">
+     <div class="id">
+      <span>编号：<input name="pro_id" readonly="readonly" value="{$info_pro.pro_id}" /></span>
+    </div>
+    <div class="title">
+      <span>标题：<input name="title" value="{$info_pro.title}" /></span>
+    </div>
+    <div class="limit">
+       <div class="time_lim"><strong>Time</strong>：<input type="number" name="time_lim" value="{$info_pro.time_lim}" />ms</div>
+      <div class="mem_lim"><strong>Memory</strong>：<input type="number" name="mem_lim" value="{$info_pro.mem_lim}" />kb</div>
+      <div class="date_lim"><strong>日期</strong>：<input type="date" name="date" value="{$info_pro.date}" /></div>
+    </div>
+
+    <div class="status">
+      题目状态：
+      <select name="status">
+      <option value="open" >开启</option>
+      <option value="close" selected="selected">关闭</option>
+    </select>
+    </div>
+    <button id="btn_submit" type="submit">提交</button><button id="btn_reset" type="reset">重新填写</button>
+    <div class="descri">
+      <p class="des">描述</p>
+      <textarea name="desc">{$info_pro.descri}</textarea>
+    </div>
+    
+    <div class="input">
+      <p class="des">输入要求</p>
+      <textarea name="input">{$info_pro.input}</textarea>
+    </div>
+    
+    <div class="output">
+      <p class="des">输出要求</p>
+      <textarea name="output">{$info_pro.output}</textarea>
+    </div>
+   
+    <div class="input_data">
+      <p class="des">样例输入</p>
+      <textarea name="input_data">{$info_pro.input_data}</textarea>
+    </div>
+    
+    <div class="output_data">
+      <p class="des">样例输出</p>
+      <textarea name="output_data">{$info_pro.output_data}</textarea>
+    </div>
+    
+    <div class="hint">
+      <p class="des">提示</p>
+      <textarea name="hint">{$info_pro.hint}</textarea>
+    </div>
+  </div>
+  <button id="btn_submit" type="submit">提交</button><button id="btn_reset" type="reset">重新填写</button>
+  </form>
+  </div>
+  <!--　页脚　--> 
+  <include file="default/foot"/> 
+  <!--　页脚　-->  
+  <script src="{$Think.config.viewdefault}/js/index.js"></script>
+ </body>
+</html>

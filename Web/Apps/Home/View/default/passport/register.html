@@ -1,0 +1,61 @@
+<html lang="zh-cn">
+ <head> 
+  <meta charset="utf-8" /> 
+  <!-- 禁用IE兼容模式 --> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+  <!-- 响应式布局 --> 
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+  <!-- 使部分国产浏览器采用默认高速的方法访问 --> 
+  <meta name="renderer" content="webkit" /> 
+  <meta name="description" content="" /> 
+  <meta name="keywords" content="" /> 
+  <title>用户注册－{$Think.config.sitename}</title> 
+  <!-- 让IE低版本浏览器兼容html5元素，实现响应式布局 --> 
+  <!--[if lt IE 9]>
+          <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]--> 
+ </head> 
+ <body> 
+  <!--　页头　--> 
+  <include file="default/head"/> 
+  <link rel="stylesheet" href="{$Think.config.viewdefault}/css/passport/register.css" /> 
+  <!--　页头　--> 
+  <div class="main">
+    <div id="area_form_register">
+    <form id="form_register" method="post" action="{:U('passport/formregister')}">
+      <div id="username">
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用户名:</span>
+        <input id="in_username" name="username" placeholder="用户名不超过20个字符"/>
+      </div>
+      <div id="passport">
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;密码:</span>
+        <input id="in_password"  name="password" placeholder="长度最少6位" type="password"/>
+      </div>
+      <div id="repassport">
+        <span>重复密码:</span>
+        <input id="in_repassword"  name="repassword" placeholder="重复上面的密码" type="password"/>
+      </div>
+      <div id="email">
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;邮箱:</span>
+        <input id="in_email"  name="email" placeholder="找回密码和接收通知使用" type="email"/>
+      </div>
+      <div id="nickname">
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;昵称:</span>
+        <input id="in_nickname"  name="nickname" placeholder="对外显示的名字"/>
+      </div>
+      <div id="btn">
+        <button type="submit">注册</button>
+      </div>
+    </form>
+    </div>
+  <div id="area_ad">
+     
+    </div>
+  </div>
+  <!--　页脚　--> 
+  <include file="default/foot"/> 
+  <!--　页脚　-->  
+  <script src="{$Think.config.viewdefault}/js/passport/register.js"></script>
+ </body>
+</html>

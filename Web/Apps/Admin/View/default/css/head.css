@@ -1,0 +1,10 @@
+#head {text-align: center;position: relative;}
+
+#head #title{text-align: left;}
+#head #title #school_logo {width: 200px;height: 60px;padding-left: 0;display: inline-block;position: absolute;}
+#head #title #text_title {padding-left: 200px;width: 600px;height: 60px;display: inline-block;text-align: center;}
+#head #title #text_title span{font-size: 30px;}
+
+#head #top_nav_panel{padding-left: 0;position: relative;}
+#head #top_nav_panel ul{padding-left: 0;text-align: center;}
+#head #top_nav_panel ol{width: 150px;height: 20px;border: solid 0px;display:inline-block;text-align: center;}

@@ -1,0 +1,74 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="{$Think.config.viewdefault}/css/ayitoj.css" /> 
+  <link rel="stylesheet" href="{$Think.config.viewdefault}/css/head.css" />
+ </head>
+ <!-- jQuery文件 --> 
+  <script src="{$Think.config.viewdefault}/js/jquery.js"></script> 
+  <!-- json解析插件 --> 
+  <script src="{$Think.config.viewdefault}/js/jquery.json.min.js"></script> 
+  <!--自定义js --> 
+  <script src="__ROOT__/Apps/Home/View/default/js/ayitoj.js"></script> 
+</html>
+<body>
+	<div id="head">
+		<div id="title">
+			<div  id="school_logo" >
+				<img src="{$Think.config.viewdefault}/image/school_logo.png">
+			</div>
+			<div id="text_title"><span>安阳工学院ACM在线评测系统</span></div>
+			<div id="ucenter_area">
+				<ul>			
+				<?php if(false == empty(cookie("user_token"))) :?>
+					<div><a <?php if ("status" == $nav): ?>class="active"<?php endif ?>
+						href="{:U('passport/logout')}">注销登录</a></div>
+					<div id="nickname"><a 
+						<?php if ("status" == $nav): ?>class="active"<?php endif ?>
+						href="{:U('passport/ucenter')}?user_id=<?php echo cookie("user_id") ?>"><?php echo cookie("nickname") ?></a></div>
+				<?php else: ?>
+					<div><a 
+						<?php if ("login" == $nav): ?>class="active"<?php endif ?>
+						href="{:U('Passport/login')}">登录</a></div>
+					<div><a <?php if ("register" == $nav): ?>class="active"<?php endif ?>
+						href="{:U('Passport/register')}">注册</a></div>
+				<?php endif ?>
+				</ul>
+			</div>
+		</div>
+		<div id="top_nav_panel">
+			<ul id = "top_nav">
+				<ol>
+					<a 
+						<?php if ("index" == $nav): ?>class="active"<?php endif ?> href="/index.php">
+						首页
+					</a>
+				</ol>
+				<ol>
+					<a 
+						<?php if ("problem" == $nav): ?>class="active"<?php endif ?> href="{:U('Problem/index')}">
+						全部题目
+					</a>
+				</ol>
+				<ol>
+					<a 
+						<?php if ("status" == $nav): ?>class="active"<?php endif ?> href="{:U('Judge/index')}">
+						运行状态
+					</a>
+				</ol>
+				<ol>
+					<a 
+						<?php if ("rank" == $nav): ?>class="active"<?php endif ?> href="{:U('Contest/index')}">
+						竞赛
+					</a>
+				</ol>
+				<ol>
+					<a 
+						<?php if ("rank" == $nav): ?>class="active"<?php endif ?> href="{:U('Rank/index')}">
+						排行榜
+					</a>
+				</ol>
+			</ul>
+		</div>
+	</div>
+</body>
+<hr />

@@ -1,0 +1,83 @@
+<html lang="zh-cn">
+ <head> 
+  <meta charset="utf-8" /> 
+  <!-- 禁用IE兼容模式 --> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+  <!-- 响应式布局 --> 
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+  <!-- 使部分国产浏览器采用默认高速的方法访问 --> 
+  <meta name="renderer" content="webkit" /> 
+  <meta name="description" content="" /> 
+  <meta name="keywords" content="" /> 
+  <title>题目{$detail.pro_id} -- {$info_contest.title}－{$Think.config.sitename}</title> 
+  <!-- 让IE低版本浏览器兼容html5元素，实现响应式布局 --> 
+  <!--[if lt IE 9]>
+      		<script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      		<script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    	<![endif]--> 
+ </head> 
+ <body> 
+  <!--　页头　--> 
+  <include file="default/head"/> 
+  <link rel="stylesheet" href="{$Think.config.viewdefault}/css/problem/detail.css" /> 
+  <!--　页头　--> 
+  <div class="main">
+  <include file="default/contest/nav"/> 
+  <div id="pro_detail">
+    <div class="id">
+      <span>题目ID：{$detail.pro_id}</span>
+    </div>
+    <div class="title">
+      <span>{$detail.pro_title}</span>
+    </div>
+    <div class="limit">
+       <div class="time_lim"><strong>Time</strong>：{$detail.pro_timelim}ms</div>
+      <div class="mem_lim"><strong>Memory</strong>：{$detail.pro_memlim}kb</div>
+    </div>
+    
+      <div class="descri">
+      <p class="des">描述</p>
+     <pre>{$detail.descri}</pre>
+    </div>
+    
+    <div class="input">
+      <p class="des">输入要求</p>
+      <pre>{$detail.input}</pre>
+    </div>
+    
+    <div class="output">
+      <p class="des">输出要求</p>
+      <pre>{$detail.output}</pre>
+    </div>
+   
+    <div class="input_data">
+      <p class="des">样例输入</p>
+      <pre>{$detail.input_data}</pre>
+    </div>
+    
+    <div class="output_data">
+      <p class="des">样例输出</p>
+      <pre>{$detail.output_data}</pre>
+    </div>
+    
+    <div class="hint">
+      <p class="des">提示</p>
+      <pre>{$detail.hint}</pre>
+    </div>
+  </div>
+  </div>
+  <div id="panel_submit">
+  <span>目前只支持C/C++。在下面提交代码 ↓↓↓↓↓</span>
+    <form id="pro_submit" action="{:U('contest/submit')}" method="post">
+      <input name="pro_id"  hidden="hidden" value="{$detail.pro_id}"/>
+      <input name="contest_id" hidden="hidden" value="{$detail.contest_id}"/>
+      <textarea id="code" name="code" rows="5"></textarea>
+      <button class="submit" type="submit">提交代码</button>
+    </form>
+  </div>
+  <!--　页脚　--> 
+  <include file="default/foot"/> 
+  <!--　页脚　-->  
+  <script src="{$Think.config.viewdefault}/js/index.js"></script>
+ </body>
+</html>

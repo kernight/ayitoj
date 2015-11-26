@@ -1,0 +1,166 @@
+<html lang="zh-cn">
+ <head> 
+  <meta charset="utf-8" /> 
+  <!-- 禁用IE兼容模式 --> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+  <!-- 响应式布局 --> 
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+  <!-- 使部分国产浏览器采用默认高速的方法访问 --> 
+  <meta name="renderer" content="webkit" /> 
+  <meta name="description" content="" /> 
+  <meta name="keywords" content="" /> 
+  <title>运行状态 -- 竞赛{$contest_id}－{$Think.config.sitename}</title> 
+  <!-- 让IE低版本浏览器兼容html5元素，实现响应式布局 --> 
+  <!--[if lt IE 9]>
+      		<script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      		<script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    	<![endif]--> 
+ </head> 
+ <body> 
+  <!--　页头　--> 
+  <include file="default/head"/> 
+  <link rel="stylesheet" href="{$Think.config.viewdefault}/css/contest/status.css" /> 
+  <!--　页头　--> 
+  <div class="main">
+  <include file="default/contest/nav"/> 
+  <form method="get" action="{:U('contest/status')}">
+  <input name="contest_id" hidden="hidden" value="{$contest_id}"/>
+  <div id="search">
+    <span>运行编号</span><input name="run_id" type="number" value="{$info_query['run_id']}"/>
+    <span>题目编号</span><input name="pro_id" type="number" value="{$info_query['pro_id']}"/>
+    <span>用户昵称</span><input name="nickname"  value="{$info_query['nickname']}"/>
+    <span>运行状态</span>
+    <select name="status">
+      <option value="" 
+      <?php if($info_query["status"]=="" ): ?>
+        selected="selected"
+      <?php endif ?>
+      >ALL</option>
+      <option value="AC" 
+      <?php if($info_query["status"]=="AC" ): ?>
+        selected="selected"
+      <?php endif ?>
+      >Accepted (答案正确)</option>
+      <option value="WA" 
+      <?php if($info_query["status"]=="WA" ): ?>
+        selected="selected"
+      <?php endif ?>
+      >Wrong Answer (答案错误)</option>
+      <option value="CE"
+      <?php if($info_query["status"]=="CE" ): ?>
+        selected="selected"
+      <?php endif ?>
+      >Compile Error (编译出错)</option>
+      <option value="PE"
+      <?php if($info_query["status"]=="PE" ): ?>
+        selected="selected"
+      <?php endif ?>
+      >Presentation Error (格式错误)</option>
+      <option value="RF"
+      <?php if($info_query["status"]=="RF" ): ?>
+        selected="selected"
+      <?php endif ?>
+      >Restricted Function (非法程序)</option>
+      <option value="OLE"
+      <?php if($info_query["status"]=="OLE" ): ?>
+        selected="selected"
+      <?php endif ?>
+      >Output Limit Exceeded (输出超限)</option>
+      <option value="TLE"
+      <?php if($info_query["status"]=="TLE" ): ?>
+        selected="selected"
+      <?php endif ?>
+      >Time Limit Exceeded (时间超限)</option>
+      <option value="MLE"
+      <?php if($info_query["status"]=="MLE" ): ?>
+        selected="selected"
+      <?php endif ?>
+      >Memory Limit Exceeded (内存超限)</option>
+      <option value="WAIT"
+      <?php if($info_query["status"]=="WAIT" ): ?>
+        selected="selected"
+      <?php endif ?>
+      >Waiting (等待评判)</option>
+      <option value="Judging"
+      <?php if($info_query["status"]=="Judging" ): ?>
+        selected="selected"
+      <?php endif ?>
+      >Judging (正在评判)</option>
+      <option value="SE"
+      <?php if($info_query["status"]=="SE" ): ?>
+        selected="selected"
+      <?php endif ?>
+      >System Error (系统运行出错,联系管理员)</option>
+    </select>
+    <button type="submit">查询</button>
+    <a  href="{:U('contest/status')}?contest_id={$contest_id}"><div id="reset">清空</div></a>
+  </div>
+</form>
+  <table id="tab_status">
+      <tr class="tab_status_head">
+        <th class="id">运行编号</th>
+        <th class="pro">问题编号</th>
+        <th class="user">用户</th>
+        <th class="status">运行状态</th>
+        <th class="time">运行时间</th>
+        <th class="memory">运行内存</th>
+        <th class="codelen">代码长度</th>
+        <th class="date">提交时间</th>
+      </tr>
+        
+      <volist name="info_status" id="info"> 
+          <tr class="tab_status_body">
+            <td class="id">{$info.run_id}</td>
+            <td class="pro"><a href="{:U('contest/detail')}?pro_id={$info.pro_id}&contest_id={$contest_id}">{$info.pro_id}</a></td>
+            <td class="user"><a href="{:U('passport/ucenter')}?user_id={$info.user_id}">{$info.nickname}</a></td>
+            <td class="status">
+            <?php if ("CE" == $info["status"]): ?>
+                <a href="{:U('judge/compile')}?run_id={$info.run_id}&nickname={$info.nickname}&date={$info.date}&user_id={$info.user_id}" target="_blank">{$info.info}</a>
+            <?php else: ?>
+               {$info.info}
+            <?php endif ?>
+            </td>  
+            <td class="time">{$info.time} ms</td>
+            <td class="memory">{$info.memory} kb</td>
+            <td class="codelen">
+            <?php if (cookie("nickname") == $info["nickname"]): ?>
+              <a href="{:U('judge/code')}?run_id={$info.run_id}&nickname={$info.nickname}&date={$info.date}&user_id={$info.user_id}" target="_blank">{$info.codelength}  B</a> 
+            <?php else: ?>
+              {$info.codelength}  B
+            <?php endif ?>
+            </td>
+            <td class="date">{$info.date}</td>
+          </tr>
+      </volist>
+  </table>
+  </div>
+    <!-- 分页代码 -->
+<div id ="page">
+ <?php if ($info_page["backfront"]): ?>
+    <a  href="{:U('contest/status')}?page=1&run_id={$info_query['run_id']}&pro_id={$info_query['pro_id']}&nickname={$info_query['nickname']}&status={$info_query['status']}&contest_id={$contest_id}">
+     <div class="btn_page <?php if ($i == $info_page['now']): ?>active<?php endif ?>">
+     <span <?php if ($i == $info_page['now']): ?>class="active" <?php endif ?>><<</span>
+     </div>
+  </a>
+ <?php endif ?>
+<for start="$info_page['start']" end="$info_page['end']">
+   <a  href="{:U('contest/status')}?page={$i}&run_id={$info_query['run_id']}&pro_id={$info_query['pro_id']}&nickname={$info_query['nickname']}&status={$info_query['status']}&contest_id={$contest_id}">
+     <div class="btn_page <?php if ($i == $info_page['now']): ?>active<?php endif ?>">
+     <span <?php if ($i == $info_page['now']): ?>class="active" <?php endif ?>>{$i}</span>
+     </div>
+  </a>
+</for>
+ <?php if ($info_page["backend"]): ?>
+    <a  href="{:U('contest/status')}?page={$info_page['num_page']}&run_id={$info_query['run_id']}&pro_id={$info_query['pro_id']}&nickname={$info_query['nickname']}&status={$info_query['status']}&contest_id={$contest_id}">
+     <div class="btn_page <?php if ($i == $info_page['now']): ?>active<?php endif ?>">
+     <span <?php if ($i == $info_page['now']): ?>class="active" <?php endif ?>>>></span>
+     </div>
+  </a>
+ <?php endif ?>
+</div>
+  <!--　页脚　--> 
+  <include file="default/foot"/> 
+  <!--　页脚　-->  
+  <script src="{$Think.config.viewdefault}/js/index.js"></script>
+ </body>
+</html>

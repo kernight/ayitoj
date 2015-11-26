@@ -1,0 +1,57 @@
+<html lang="zh-cn">
+ <head> 
+  <meta charset="utf-8" /> 
+  <!-- 禁用IE兼容模式 --> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+  <!-- 响应式布局 --> 
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+  <!-- 使部分国产浏览器采用默认高速的方法访问 --> 
+  <meta name="renderer" content="webkit" /> 
+  <meta name="description" content="" /> 
+  <meta name="keywords" content="" /> 
+  <title>竞赛列表－{$Think.config.sitename}</title> 
+  <!-- 让IE低版本浏览器兼容html5元素，实现响应式布局 --> 
+  <!--[if lt IE 9]>
+      		<script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      		<script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    	<![endif]--> 
+ </head> 
+ <body> 
+  <!--　页头　--> 
+  <include file="default/head"/> 
+  <link rel="stylesheet" href="{$Think.config.viewdefault}/css/contest/index.css" /> 
+  <!--　页头　--> 
+  <div class="main">
+  <table id="tab_contest_list">
+    <tr>
+      <th class="status">状态</th>
+      <th class="id">竞赛编号</th>
+      <th class="title">题目</th>
+      <th class="datestart">开始时间</th>
+      <th class="dateend">结束时间</th>
+    </tr>
+    <volist name="info_contest" id="info">
+      <tr>
+      <td class="status">
+      <?php if ("open" == $info["status"]): ?>
+          <span class="open">开启</span>
+        <?php elseif("close" == $info["status"]): ?>
+          <span class="close">结束</span>
+        <?php else: ?>
+          <span class="lock">锁定</span>
+        <?php endif ?>
+      </td>
+      <td class="id">{$info.contest_id}</td>
+      <td class="title"><a href="{:U('contest/showlist')}?contest_id={$info.contest_id}">{$info.title}</a></td>
+      <td class="datestart">{$info.date_start}</td>
+      <td class="dateend">{$info.date_end}</td>
+    </tr>
+    </volist>
+  </table>
+  </div>
+  <!--　页脚　--> 
+  <include file="default/foot"/> 
+  <!--　页脚　-->  
+  <script src="{$Think.config.viewdefault}/js/index.js"></script>
+ </body>
+</html>
