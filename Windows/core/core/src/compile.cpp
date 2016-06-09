@@ -48,6 +48,10 @@ int Compile::run_cpp()
 		string cmd = "g++ "+ path_run + "Main.cpp -o " + path_run + "Main -O2 -w -lm --static";
 
 		if (false == my_exec(cmd, path_ceinfo, 10)){
+			Log::log(Info_Log{
+			LOG_ERROR,
+			"±‡“Î«∞SE : " + cmd
+		});
 			throw (OJ_ERROR)OJ_SE;
 		}
 

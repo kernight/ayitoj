@@ -1,7 +1,7 @@
 <?php
 return array(
-	"DATA_PATH"=>"../data/",//数据文件夹
-	"DATA_RUNING"=>"../data/running/",//数据文件夹
+	"DATA_PATH"=>"../Windows/bin/data/",//数据文件夹
+	"DATA_RUNING"=>"../Windows/bin/data/running/",//数据文件夹
 	"PATH_PROBLEM" => "./Public/problem/",
 	"CODE_MAX_LEN"=>10240,//代码最大长度
 	

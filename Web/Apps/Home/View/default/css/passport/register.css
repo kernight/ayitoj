@@ -1,9 +1,10 @@
 #area_form_register{padding-top: 50px;width: 50%;height: 500px;border-right:solid 1px;text-align: center;display: inline-block;font-size: 18px;}
-#area_form_register #username{height: 75px;}
-#area_form_register #passport{height: 50px;}
-#area_form_register #repassport{height: 75px;}
-#area_form_register #nickname{height: 75px;}
-#area_form_register #email{height: 75px;}
+#area_form_register #username{height: 75px;width: 400px;}
+#area_form_register #passport{height: 50px;width: 400px;}
+#area_form_register #repassport{height: 75px;width: 400px;}
+#area_form_register #nickname{height: 75px;width: 400px;}
+#area_form_register #email{height: 75px;width: 400px;}
+#area_form_register span{display:inline-block;height: 30px;width: 100px;text-align:right;font-size: 15px;}
 #area_form_register input{height: 30px;width: 270px;font-size: 15px;}
 #area_form_register button{margin-right: 10px;height: 50px;width: 150px;}
 

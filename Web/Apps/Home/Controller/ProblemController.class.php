@@ -117,20 +117,23 @@ class ProblemController extends Controller {
                 $detail['user_id'] = $res;
                 $detail['pro_id']  =  I("post.pro_id");
 
-                
-
                 do{
                     $detail['run_id']  =  time()+rand()+time();
                 }while(false == $judge->check_run_id($detail["run_id"]));
 
                 $detail['code'] = $_POST["code"];
                 $detail['nickname'] = cookie("nickname");
-                $detail['date'] = date("Y-m-d H:i:sa");
+                $detail['date'] = date("Y-m-d H:i:s");
                 $detail['codelength'] = strlen($detail['code']);
 
                 //把代码保存到data的running目录  
                 $path_data = C("DATA_RUNING");
+
                 $res = mkdir($path_data.$detail["run_id"]);
+                
+                if(false == $res){
+                    $this->redirect('problem/detail', array("pro_id"=> $detail['pro_id']), 1, '提交失败，文件创建失败.<br />正在跳转……');
+                }
             }
         }
 

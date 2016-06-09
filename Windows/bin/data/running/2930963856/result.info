@@ -1,0 +1,7 @@
+data\running\2930963856\Main.cpp:2:2: error: invalid preprocessing directive #inculde
+ #inculde <unistd.h>
+  ^
+data\running\2930963856\Main.cpp: In function 'int main()':
+data\running\2930963856\Main.cpp:9:9: error: 'sleep' was not declared in this scope
+ sleep(10);
+         ^

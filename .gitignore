@@ -14,6 +14,7 @@
 
 #VS
 *.sdf
+*.opensdf
 *.pdb
 Release
 Debug
@@ -21,3 +22,5 @@ Debug
 # other
 temp
 cache
+.idea
+problem

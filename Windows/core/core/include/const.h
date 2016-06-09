@@ -1,6 +1,6 @@
 /*Author:steve-liu
 *blog:http://blog.csdn.net/liuxucoder/
-*git:https://code.csdn.net/youqi1shi/guanjia
+*git::http://git.ykgzs.com
 */
 #ifndef CONST_H
 #define CONST_H 

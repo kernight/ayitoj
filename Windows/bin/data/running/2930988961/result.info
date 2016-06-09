@@ -1,0 +1,4 @@
+data\running\2930988961\Main.cpp: In function 'int main()':
+data\running\2930988961\Main.cpp:9:9: error: 'sleep' was not declared in this scope
+ sleep(10);
+         ^

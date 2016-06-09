@@ -1,6 +1,6 @@
 /*Author:steve-liu
 *blog:http://blog.csdn.net/liuxucoder/
-*git:https://code.csdn.net/youqi1shi/guanjia
+*git:http://git.ykgzs.com
 */
 
 #include "../include/config.h"
@@ -33,6 +33,9 @@ OJ_ERROR Config::load()
 		while (fin >> key) {
 			/*这里读取两次，消除中间那个等号*/
 			fin >> value >> value;
+			if ("^"== value){
+				value = "";
+			}
 			Info_Config[key] = value;	
 		}
 

@@ -1,7 +1,8 @@
 #area_form_login{padding-top: 50px;width: 50%;height: 500px;border-left:solid 1px;text-align: center;display: inline-block;font-size: 18px;}
-#area_form_login #username{height: 100px;}
-#area_form_login #passport{height: 50px;}
-#area_form_login input{height: 30px;width: 270px;font-size: 15px;}
+#area_form_login #username{height: 100px;width: 500px;}
+#area_form_login #passport{height: 50px;width: 500px}
+#area_form_login span{display:inline-block;height: 30px;width: 100px;text-align:right;font-size: 15px;}
+#area_form_login input{display:inline-block;height: 30px;width: 270px;font-size: 15px;}
 #area_form_login button{margin-right: 10px;height: 50px;width: 150px;}
 
 #area_toregister{width: 45%;text-align: center;display: inline-block;font-size: 18px;}

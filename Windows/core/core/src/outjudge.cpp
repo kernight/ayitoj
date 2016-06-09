@@ -54,8 +54,8 @@ int Outjudge::tons()
 int Outjudge::nsjudge()
 {
 	FILE *fp_cmd = NULL;
+	string path_ns_answer = PH_IO + m_info.pro_id + "\\" + m_info.title_in + "-ns.out";
 	try{
-		string path_ns_answer = PH_IO + m_info.pro_id + "\\" + m_info.title_in + "-ns.out";
 		
 		if (false == file_cmp(path_ns_answer, m_nsfilename)){
 			throw (OJ_ERROR)OJ_WA;
@@ -64,7 +64,7 @@ int Outjudge::nsjudge()
 	}catch(OJ_ERROR){
 		Log::log(Info_Log{
 			LOG_ERROR,
-			"无符号结果文件对比失败"
+			"无符号结果文件对比失败：" + path_ns_answer + " " + m_nsfilename
 		});
 		throw ;
 	}

@@ -1,6 +1,6 @@
 /* Author:steve-liu
 *blog:http://blog.csdn.net/liuxucoder/
-*git:https://code.csdn.net/youqi1shi/guanjia
+*git::http://git.ykgzs.com
  */
 
 #include "../include/log.h"

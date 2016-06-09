@@ -95,7 +95,7 @@ bool Database::Query(string sql)
 	catch (OJ_ERROR){
 		Log::log(Info_Log{
 			LOG_ERROR,
-			"数据库查询错误"
+			"数据库查询错误　："+sql
 		});
 
 		return false;
