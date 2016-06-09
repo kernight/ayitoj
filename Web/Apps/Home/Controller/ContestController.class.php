@@ -292,7 +292,6 @@ class ContestController extends Controller {
 		$info_rank = $contest->getcontestrank($contest_id);
 		$info_pro = $info_rank["pro_info"];
 		$info_user = $info_rank["user_info"];
-
 		usort($info_user,function($a, $b){
 			if($a["pro"]["num_ac"] == $b["pro"]["num_ac"]){
 				return $a["pro"]["time_ac"] > $b["pro"]["time_ac"];

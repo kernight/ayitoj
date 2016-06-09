@@ -41,7 +41,10 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IncludePath>E:\Code\ayitoj\Windows\include;$(IncludePath)</IncludePath>
     <LibraryPath>E:\Code\ayitoj\Windows\lib;$(LibraryPath)</LibraryPath>
-    <OutDir>..\..\bin</OutDir>
+    <OutDir>..\..\..\Program</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\..\..\Program</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

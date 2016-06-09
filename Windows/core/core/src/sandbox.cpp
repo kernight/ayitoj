@@ -131,8 +131,8 @@ PROCESS_INFORMATION Sandbox::run_cpp()
 
 		basicInfo.ActiveProcessLimit = 1;
 		basicInfo.PriorityClass = NORMAL_PRIORITY_CLASS;      //优先级为默认
-		basicInfo.PerProcessUserTimeLimit.QuadPart = m_info.time_lim * 10000;
-		basicInfo.PerJobUserTimeLimit.QuadPart = m_info.time_lim * 10000;
+		basicInfo.PerProcessUserTimeLimit.QuadPart = m_info.time_lim;
+		basicInfo.PerJobUserTimeLimit.QuadPart = m_info.time_lim;
 		ex_lim.ProcessMemoryLimit = 1024 * m_info.mem_lim;
 
 		SetInformationJobObject(hJob, JobObjectExtendedLimitInformation, &ex_lim, sizeof(ex_lim));

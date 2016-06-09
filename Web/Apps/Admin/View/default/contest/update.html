@@ -31,11 +31,11 @@
 			<div id="title"><span>竞赛标题</span>：<input name="title" value="{$info_contest.title}"/></div>
 			<div id="date_start">
 				<span>开始时间</span>：
-				<input name="date_start" type="date" value="{$info_contest.date_start}"/>
+				<input name="date_start" type="datetime" value="{$info_contest.date_start}"/>
 			</div>
 			<div id="date_end">
 				<span>结束时间</span>：
-				<input name="date_end" type="date" value="{$info_contest.date_end}"/>
+				<input name="date_end" type="datetime" value="{$info_contest.date_end}"/>
 			</div>
 			<div id="status">
 				<span>竞赛状态</span>：
@@ -48,7 +48,7 @@
 			<button id="pro_del" type="button">删除题目</button>
 			<div id="pro_area">
 			<volist name="info_pro" id="info">
-				<div id='div_pro_{$key+1}'><span>题目{$key+1}：</span><input name='pro_id_{$key+1}' type='number' value="{$info.pro_id}"/></div>
+				<div id='div_pro_{$key+1}'><span>题目{$key+1}：</span><input name='pro_id[]' type='number' value="{$info.pro_id}"/></div>
 			</volist>
 			</div>
 		</div>

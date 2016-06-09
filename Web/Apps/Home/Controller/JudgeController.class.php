@@ -149,9 +149,8 @@ class JudgeController extends Controller {
 			$info_path = C("DATA_RUNING").$info_code["run_id"]."/Main.cpp";
 
 			$res = fopen($info_path, "r");
-
 			if(false == $res){
-				$this->redirect('Judge/index', NULL, 1, '加载编译信息错误.<br />正在跳转回状态列表……');
+				$this->redirect('Judge/index', NULL, 1, '加载代码信息错误.<br />正在跳转回状态列表……');
 			}
 			$info_code["info"] = fread($res, 102400);
 			$info_code["info"] = htmlspecialchars($info_code["info"]);	//转换为实体字符

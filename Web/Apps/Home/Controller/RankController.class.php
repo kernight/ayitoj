@@ -42,7 +42,4 @@ class RankController extends Controller {
             $this->assign("rank","nav");
             $this->display("default/rank/index");
         }
-
-        
-         
 }

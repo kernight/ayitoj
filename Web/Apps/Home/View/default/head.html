@@ -8,7 +8,7 @@
   <!-- json解析插件 --> 
   <script src="{$Think.config.viewdefault}/js/jquery.json.min.js"></script> 
   <!--自定义js --> 
-  <script src="__ROOT__/Apps/Home/View/default/js/ayitoj.js"></script> 
+  <script src="{$Think.config.viewdefault}/js/ayit.js"></script>
 </html>
 <body>
 	<div id="head">
@@ -57,7 +57,7 @@
 				</ol>
 				<ol>
 					<a 
-						<?php if ("rank" == $nav): ?>class="active"<?php endif ?> href="{:U('Contest/index')}">
+						<?php if ("contest" == $nav): ?>class="active"<?php endif ?> href="{:U('Contest/index')}">
 						竞赛
 					</a>
 				</ol>

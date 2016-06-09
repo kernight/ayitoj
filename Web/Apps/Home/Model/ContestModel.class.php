@@ -151,14 +151,13 @@ class ContestModel extends Model {
                     if(false == $info_ac){
                          $res["user_info"][$i]["pro"][$pro_id] = "wa";
                     }else{
-                         $res["user_info"][$i]["pro"][$pro_id] = round((strtotime($info_ac[0]["date"]) -strtotime($date_start))/60);
+                         $res["user_info"][$i]["pro"][$pro_id] = round((strtotime($info_ac[0]["date"]) - strtotime($date_start))/60);
                          $res["user_info"][$i]["pro"]["num_ac"] += 1;
                          $res["user_info"][$i]["pro"]["time_ac"] +=  $res["user_info"][$i]["pro"][$pro_id];
                     }
                 }
                
             }
-            
             return $res;
         }
         

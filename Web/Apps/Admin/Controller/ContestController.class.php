@@ -34,20 +34,11 @@ class ContestController extends Controller {
 		$data["date_end"] = I("post.date_end");
 		$data["status"] = I("post.status");
 
-
 		$contest = D("contest");
 		$res = $contest->addcontest($data);
 
 		if(true == $res){
-			$pro = I("post.");
-
-			$contest_id = $res;
-			unset($pro["contest_id"]);
-			unset($pro["title"]);
-			unset($pro["date_start"]);
-			unset($pro["date_end"]);
-			unset($pro["status"]);
-
+			$pro = I("post.pro_id");
 			$key = 0;
 			$problem = D("problem");
 			
@@ -111,14 +102,7 @@ class ContestController extends Controller {
 		}
 
 		if(true == $res){
-			$pro = I("post.");
-
-			$contest_id = $res;
-			unset($pro["contest_id"]);
-			unset($pro["title"]);
-			unset($pro["date_start"]);
-			unset($pro["date_end"]);
-			unset($pro["status"]);
+			$pro = I("post.pro_id");
 
 			$key = 0;
 			$problem = D("problem");
@@ -128,6 +112,7 @@ class ContestController extends Controller {
 					$pro_id = $value;
 					$info_pro = $problem->proinfo($pro_id);
 					if(true == $info_pro){
+						var_dump($value);
 						$data_pro[$key]["contest_id"] = $contest_id;
 						$data_pro[$key]["pro_id"] = $value;
 						$data_pro[$key]["title"] = $info_pro["title"];
@@ -135,7 +120,6 @@ class ContestController extends Controller {
 						$key++;
 					}
 				}
-
 				$contest->contestaddpro($contest_id,$data_pro);
 			}
 		}
