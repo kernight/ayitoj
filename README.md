@@ -15,6 +15,8 @@
     2. bootstarp
     3. jquery
     4. c++ (评测机)
+    5. pjax
+    6. nprogress
 
 ## 开发日志
    见 [CHANGELOG.md](CHANGELOG.md)
