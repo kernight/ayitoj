@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS `ayitoj_user`;
 CREATE TABLE `ayitoj_user` (
-  `user_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '用户id',
+  `user_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '用户id',
   `username` varchar(255) NOT NULL COMMENT '用户名',
   `password` varchar(512) NOT NULL COMMENT '密码',
   `nickname` varchar(255) NOT NULL COMMENT '昵称',
